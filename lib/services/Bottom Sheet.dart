@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:intl/intl.dart';
 
 import '../modules/today_menu/today_menu_controller.dart';
 import '../themes/colors_theme.dart';
@@ -79,7 +80,7 @@ import 'MenuTable.dart';
                                  Center(
 
                                     child:Text(
-                                      controller.dinner[index+1+controller.date.day].column2.toString()+ " - " +controller.dinner[index+1+controller.date.day].dinnerMenuNov22.toString(), style: TextStyle(fontWeight: FontWeight.bold),)
+                                      "${controller.dinner[index+1+controller.date.day].column2} - ${DateFormat(dateFormat).format(controller.date.add(Duration(days: index)))}", style: TextStyle(fontWeight: FontWeight.bold),)
                                 ),
                                 menuTableUpcoming(controller, index+1+controller.date.day,context),
                               ],

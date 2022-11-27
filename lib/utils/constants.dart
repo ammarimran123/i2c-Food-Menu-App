@@ -17,4 +17,5 @@ Map<int, String> functionMapper = const <int, String>{
 };
 
 
- String api_url='https://i2cfoodmenu.000webhostapp.com/uploads/menu.json';
+const String api_url='https://i2cfoodmenu.000webhostapp.com/uploads/menu.json';
+const String dateFormat="dd MMMM yyyy";
