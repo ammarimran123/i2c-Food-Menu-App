@@ -17,7 +17,7 @@ void main() {
 
       // If enabled it will post a notification whenever
       // the task is running. Handy for debugging tasks
-      isInDebugMode: true
+      isInDebugMode: false
   );
   Workmanager().registerPeriodicTask(
     "2",
@@ -45,7 +45,9 @@ void callbackDispatcher() {
 
     // initialise the plugin of flutterlocalnotifications.
     NotificationService().showNotification(
-        1, 'Lucnh is ready!', 'Hurry up! Click to see the menu');
+        1, 'Lucnh is ready!', 'Hurry up! Click to see the menu',"11:23:00");
+    NotificationService().showNotification(
+        2, 'Dinner is ready!', 'Hurry up! Click to see the menu',"19:00:00");
 
 
     return Future.value(true);

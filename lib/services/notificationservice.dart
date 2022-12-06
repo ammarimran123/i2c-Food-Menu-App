@@ -39,7 +39,7 @@ class NotificationService {
     await flutterLocalNotificationsPlugin.initialize(initializationSettings);
   }
 
-  Future<void> showNotification(int id, String title, String body) async {
+  Future<void> showNotification(int id, String title, String body,String time) async {
     var now = new DateTime.now();
     now== now.add(new Duration(days: 1));
     DateFormat formatter = DateFormat('yyyy-MM-dd');
@@ -48,7 +48,7 @@ class NotificationService {
       id,
       title,
       body,
-      tz.TZDateTime.parse(tz.local,"$formatted 11:23:00").add(const Duration(seconds: 1)
+      tz.TZDateTime.parse(tz.local,"$formatted $time").add(const Duration(seconds: 1)
       ), //schedule the notification to show after 2 seconds.
       const NotificationDetails(
 
