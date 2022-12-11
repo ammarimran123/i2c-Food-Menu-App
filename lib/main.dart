@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    precacheImage(const AssetImage("assets/images/imageFoodl.jpg"), context);
+    precacheImage(const AssetImage("assets/images/imageFoodl.jpg"), context); //Image Caching
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'i2c Food App',
