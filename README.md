@@ -1,16 +1,10 @@
-# food_menu_app
+# i2c food_menu_app
 
-A new Flutter project.
+### Created this applicaiton for the employees to access the Daily Menu for lunch and dinner.
+![3](https://user-images.githubusercontent.com/81237843/206898377-1fa60225-3353-4980-beeb-20f4ae9cdeee.jpeg)
+![2](https://user-images.githubusercontent.com/81237843/206898405-e8aaff5b-d11c-48be-b55b-1542ff6e3ca2.jpeg)
 
-## Getting Started
+## Notification messages
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![1](https://user-images.githubusercontent.com/81237843/206898422-2a220ec3-e4f4-479a-b8db-41facd87c195.jpeg)
+![4](https://user-images.githubusercontent.com/81237843/206898425-3f8eb66b-3498-49c5-8c96-d9f72e658a78.jpeg)
