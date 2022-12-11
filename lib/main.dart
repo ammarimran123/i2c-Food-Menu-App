@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_menu_app/routes/app_pages.dart';
 import 'package:food_menu_app/services/notificationservice.dart';
 import 'package:food_menu_app/themes/colors_theme.dart';
+import 'package:food_menu_app/utils/constants.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:workmanager/workmanager.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -37,6 +38,7 @@ void main() {
 
   runApp(const MyApp());
 }
+@pragma('vm:entry-point')
 void callbackDispatcher() {
   Workmanager().executeTask((task, inputData) {
 
@@ -45,9 +47,9 @@ void callbackDispatcher() {
 
     // initialise the plugin of flutterlocalnotifications.
     NotificationService().showNotification(
-        1, 'Lucnh is ready!', 'Hurry up! Click to see the menu',"11:23:00");
+        1, 'Lucnh is ready!', 'Hurry up! Click to see the menu',lunchTime);
     NotificationService().showNotification(
-        2, 'Dinner is ready!', 'Hurry up! Click to see the menu',"19:00:00");
+        2, 'Dinner is ready!', 'Hurry up! Click to see the menu',dinnerTime);
 
 
     return Future.value(true);

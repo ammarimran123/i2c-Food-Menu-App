@@ -40,8 +40,8 @@ class NotificationService {
   }
 
   Future<void> showNotification(int id, String title, String body,String time) async {
-    var now = new DateTime.now();
-    now== now.add(new Duration(days: 1));
+    var now = DateTime.now();
+    //now== now.add(new Duration(days: 1));
     DateFormat formatter = DateFormat('yyyy-MM-dd');
     String formatted = formatter.format(now);
     await flutterLocalNotificationsPlugin.zonedSchedule(
