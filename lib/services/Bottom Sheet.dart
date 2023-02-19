@@ -60,7 +60,7 @@ import 'MenuTable.dart';
                     height: MediaQuery
                         .of(context)
                         .size
-                        .height*0.85,
+                        .height*0.82,
                     child: ListView.builder(
                         itemCount: controller.lunch.length-1-controller.date.day,
                         itemBuilder: (context, int index) {
@@ -92,6 +92,18 @@ import 'MenuTable.dart';
 
 
                 ),
+                Center(
+                  //padding: new EdgeInsets.all(10.0),
+                  child: new Text("Copyrights© All Rights Reserved.",style: TextStyle(color: Colors.black),),
+                ),
+                Center(
+                  //padding: new EdgeInsets.all(10.0),
+                  child: new Text("Powered by : Ammar Imran, Ali Murad",style: TextStyle(color: Colors.black),),
+                ),
+                Center(
+                  //padding: new EdgeInsets.all(10.0),
+                  child: new Text("(Mobile Team)",style: TextStyle(color: Colors.black),),
+                )
               ],
             ),
           );

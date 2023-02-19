@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:food_menu_app/routes/app_pages.dart';
 import 'package:food_menu_app/services/notificationservice.dart';
 import 'package:food_menu_app/themes/colors_theme.dart';
 import 'package:food_menu_app/utils/constants.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:intl/intl.dart';
 import 'package:workmanager/workmanager.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'modules/today_menu/today_menu_binding.dart';
 import 'modules/today_menu/today_menu_page.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Workmanager().initialize(
 
@@ -33,23 +35,48 @@ void main() {
     // Android will automatically change
     // your frequency to 15 min
     // if you have configured a lower frequency.
-    frequency: const Duration(hours: 6),
+    frequency: const Duration(minutes: 60),
   );
+  if(DateTime.now().day==1) {
+    await DefaultCacheManager().emptyCache();
+  }
+    runApp(const MyApp());
+  }
 
-  runApp(const MyApp());
-}
 @pragma('vm:entry-point')
 void callbackDispatcher() {
-  Workmanager().executeTask((task, inputData) {
+  Workmanager().executeTask((task, inputData) async {
 
     NotificationService().initNotification();
     tz.initializeTimeZones();
 
-    // initialise the plugin of flutterlocalnotifications.
-    NotificationService().showNotification(
+    await NotificationService().showNotification(
         1, 'Lucnh is ready!', 'Hurry up! Click to see the menu',lunchTime);
+    print("Ammar");
     NotificationService().showNotification(
         2, 'Dinner is ready!', 'Hurry up! Click to see the menu',dinnerTime);
+    // var now = DateTime.now();
+    // // String formattedTime = DateFormat.Hms().format(now);
+    // String day=DateFormat('dd-MM-yyyy').format(now);
+    // print(day+ "123459");
+    // print(day+ lunchTime);
+    // print(day+ dinnerTime);
+    // // initialise the plugin of flutterlocalnotifications.
+    // DateTime lunchChecker = DateTime.parse('$day $lunchTime');
+    // print(day+ lunchTime);
+    // DateTime dinnerChecker = DateTime.parse('$day $dinnerTime');
+    // print(day + dinnerTime);
+    // if(now.isBefore(lunchChecker)){
+    //   await NotificationService().showNotification(
+    //       1, 'Lucnh is ready!', 'Hurry up! Click to see the menu',lunchTime);
+    // }
+    // if(now.isBefore(dinnerChecker)){
+    //   NotificationService().showNotification(
+    //       2, 'Dinner is ready!', 'Hurry up! Click to see the menu',dinnerTime);
+    // }
+
+    // NotificationService().showNotification(
+    //     3, 'Testing notification', 'Hurry up! Click to see the menu',formattedTime);
 
 
     return Future.value(true);

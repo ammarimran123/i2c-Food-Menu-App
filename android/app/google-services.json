@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "259365009766",
+    "project_id": "foodmenuapp-10218",
+    "storage_bucket": "foodmenuapp-10218.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259365009766:android:518b3362cbdebe3ab030a7",
+        "android_client_info": {
+          "package_name": "com.i2c.foodmenuapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259365009766-hafssbnqj104830fnr3ucens8pvbjou0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPoAxR_kC8Z3QO4wDs9im9O427Vjv6LHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259365009766-hafssbnqj104830fnr3ucens8pvbjou0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "259365009766-unrnmnm5618bupn83kop46mfhds31h7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.i2c.foodmenuapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

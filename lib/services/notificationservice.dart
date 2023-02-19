@@ -41,7 +41,7 @@ class NotificationService {
 
   Future<void> showNotification(int id, String title, String body,String time) async {
     var now = DateTime.now();
-    //now== now.add(new Duration(days: 1));
+    now== now.add(new Duration(days: 1));
     DateFormat formatter = DateFormat('yyyy-MM-dd');
     String formatted = formatter.format(now);
     await flutterLocalNotificationsPlugin.zonedSchedule(
@@ -69,8 +69,7 @@ class NotificationService {
       // Type of time interpretation
       uiLocalNotificationDateInterpretation:
       UILocalNotificationDateInterpretation.absoluteTime,
-      androidAllowWhileIdle:
-      true, // To show notification even when the app is closed
+      androidAllowWhileIdle: true, // To show notification even when the app is closed
     );
   }
 }
