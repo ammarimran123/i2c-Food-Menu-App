@@ -5,7 +5,7 @@ import 'package:food_menu_app/services/notificationservice.dart';
 import 'package:food_menu_app/themes/colors_theme.dart';
 import 'package:food_menu_app/utils/constants.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:intl/intl.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:workmanager/workmanager.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'modules/today_menu/today_menu_binding.dart';
@@ -37,9 +37,6 @@ Future<void> main() async {
     // if you have configured a lower frequency.
     frequency: const Duration(minutes: 60),
   );
-  if(DateTime.now().day==1) {
-    await DefaultCacheManager().emptyCache();
-  }
     runApp(const MyApp());
   }
 

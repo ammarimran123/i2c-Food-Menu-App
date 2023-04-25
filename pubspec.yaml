@@ -46,6 +46,7 @@ dependencies:
   flutter_cache_manager: ^3.3.0
   firebase_core: ^2.4.1
   firebase_messaging: ^14.2.1
+  connectivity: ^3.0.6
 
 dev_dependencies:
   flutter_test:

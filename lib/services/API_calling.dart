@@ -2,14 +2,19 @@
 import 'dart:convert';
 
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:connectivity/connectivity.dart';
 
 import '../models/model.dart';
 import '../utils/constants.dart';
-import 'package:http/http.dart' as http;
 
 class MenuAPI{
   Future<Model> fetchAlbum() async {
     var response = await DefaultCacheManager().getSingleFile(api_url);
+    final connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.mobile || connectivityResult == ConnectivityResult.wifi) {
+      await DefaultCacheManager().removeFile(api_url);
+      response = await DefaultCacheManager().getSingleFile(api_url);
+    }
     //String response=file.readAsStringSync();
 
     //print(file.readAsStringSync());
